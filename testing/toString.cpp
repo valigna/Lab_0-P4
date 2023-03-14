@@ -1,5 +1,38 @@
-#include "../include/Objeto.hh"
-#include "Objeto.hh"
+#include<iostream>
+// Archivo : [Objeto.hh]
+#include "../include/utils.hh"
+
+
+class Objeto
+{
+private:
+    string Nombre;
+    int AnioComprado;
+    estado Estado;
+    string EstadoToString();
+public:
+    //Defino getters y setters
+    string getNombre();
+    void setNombre(string nombre);
+    int getAnio();
+    void setAnio(int anio);
+    estado getEstado();
+    void setEstado(enum estado);
+
+    //Defino constructores
+    Objeto();
+    Objeto(string Nombre, int AnioComprado, estado Estado);
+
+    //Defino otras funciones
+    //virtual string toString();
+    string toStringAux();
+
+    //Defino destructores
+    ~Objeto();
+};
+
+
+// Archivo : [Objeto.cpp]
 
 // Setters y Getters...
 string Objeto::getNombre()  
@@ -34,7 +67,7 @@ void Objeto::setEstado(estado Estado){
 Objeto::Objeto(){
     this->Nombre = "";
     this->AnioComprado = 0;
-    //this->Estado = ??
+    this->Estado = Nuevo;
 }
 
 Objeto::Objeto(string Nombre, int AnioComprado, estado Estado){
@@ -50,15 +83,28 @@ string Objeto::EstadoToString(){
     {
     case Nuevo:
         return "Nuevo";
+        break;
     case BienConservado:
         return "Bien Conservado";
+        break;
     case Roto:
         return "Roto";
+        break;
     }
-    
+    //default:
+    return " ";
+    //break;
+
 }
 
 string Objeto::toStringAux() {
     return this->Nombre + ", " + std::to_string(this->AnioComprado) + ", " + this->EstadoToString() + ", ";
 }
 
+int main() {
+    Objeto *obj1 = new Objeto("Nacidos de la bruma: El imperio infernal",2022,Roto);
+    string res = obj1->toStringAux();
+    cout << res;
+
+    return 1;
+}
