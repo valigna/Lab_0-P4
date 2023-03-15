@@ -1,4 +1,5 @@
-#include "utils.hh"
+#include "Utils.hh"
+#include "Ninio.hh"
 
 #ifndef OBJETO
 #define OBJETO
@@ -10,6 +11,7 @@ private:
     int AnioComprado;
     estado Estado;
     string EstadoToString();
+    Ninio *PrestadoA;
 public:
     //Defino getters y setters
     string getNombre();
@@ -17,7 +19,9 @@ public:
     int getAnio();
     void setAnio(int anio);
     estado getEstado();
-    void setEstado(enum estado);
+    void setEstado(estado Estado);
+    void setPrestadoA(Ninio *PrestadoA);
+    Ninio* getPrestadoA();
 
     //Defino constructores
     Objeto();

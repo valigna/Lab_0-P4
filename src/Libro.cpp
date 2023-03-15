@@ -6,7 +6,7 @@ Libro::Libro() : Objeto(){
     this->CantPaginas = 0;
 }
 
-Libro::Libro(string autor, int CantPaginas) : Objeto(string Nombre, int AnioComprado, estado Estado){
+Libro::Libro(string Nombre, int AnioComprado, estado Estado, string autor, int CantPaginas) : Objeto(Nombre, AnioComprado, Estado){
     this->Autor = autor;
     this->CantPaginas = CantPaginas;
 }

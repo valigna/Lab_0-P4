@@ -1,4 +1,4 @@
-#include "utils.hh"
+#include "Utils.hh"
 #include "Objeto.hh"
 
 using namespace std;
@@ -21,7 +21,7 @@ public:
 
     /* Constructores */
     Libro();
-    Libro(string autor, int CantPaginas);
+    Libro(string Nombre, int AnioComprado, estado Estado, string autor, int CantPaginas);
 
     /* Destructor */
     ~Libro();

@@ -1,4 +1,4 @@
-#include "utils.hh"
+#include "Utils.hh"
 #include "Objeto.hh"
 
 #ifndef JUEGO_MESA
@@ -13,7 +13,7 @@ private:
 public:
     // Defino los constructores...
     JuegoMesa();
-    JuegoMesa(int EdadRecomendada, int CantJugadores);
+    JuegoMesa(string Nombre, int AnioComprado, estado Estado, int EdadRecomendada, int CantJugadores);
 
     // Defino los getters y setters...
     void setEdadRecomendada(int EdadRecomendada);

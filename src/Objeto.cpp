@@ -1,5 +1,4 @@
 #include "../include/Objeto.hh"
-#include "Objeto.hh"
 
 // Setters y Getters...
 string Objeto::getNombre()  
@@ -17,6 +16,15 @@ estado Objeto::getEstado()
     return Estado;
 }
 
+void Objeto::setPrestadoA(Ninio *PrestadoA){
+    this->PrestadoA = PrestadoA;
+}
+
+Ninio* Objeto::getPrestadoA()
+{
+    return PrestadoA;
+}
+
 void Objeto::setNombre(string nombre){
     this->Nombre = nombre;
 }
@@ -30,17 +38,21 @@ void Objeto::setEstado(estado Estado){
 }
 
 
+
+
 // Constructores...
 Objeto::Objeto(){
     this->Nombre = "";
     this->AnioComprado = 0;
     //this->Estado = ??
+    this->PrestadoA = NULL;
 }
 
 Objeto::Objeto(string Nombre, int AnioComprado, estado Estado){
     this->Nombre = Nombre;
     this->AnioComprado = AnioComprado;
     this->Estado = Estado;
+    this->PrestadoA = NULL;
 }
 
 
@@ -55,7 +67,7 @@ string Objeto::EstadoToString(){
     case Roto:
         return "Roto";
     }
-    
+    return "";
 }
 
 string Objeto::toStringAux() {

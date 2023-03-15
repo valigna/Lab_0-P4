@@ -1,5 +1,4 @@
 #include "../include/DTObjetoRoto.hh"
-#include "DTObjetoRoto.hh"
 
 
 //Constructores
@@ -16,9 +15,9 @@ DTObjetoRoto::DTObjetoRoto(string nObj, bool p, string nNin) {
 }
 
 DTObjetoRoto::DTObjetoRoto(const DTObjetoRoto &obj) {
-    this->NombreObjeto = obj->getNombreObjeto();
-    this->Prestado = obj->getPrestado();
-    this->NombreNinio = obj->getNombreNinio();
+    this->NombreObjeto = obj.NombreObjeto;
+    this->Prestado = obj.Prestado;
+    this->NombreNinio = obj.NombreNinio;
 }
 
 // getters y setters

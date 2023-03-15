@@ -24,7 +24,7 @@ JuegoMesa::JuegoMesa() : Objeto(){
     this->EdadRecomendada = 0;
 }
 
-JuegoMesa::JuegoMesa(int EdadRecomendada, int CantJugadores) : Objeto(string Nombre, int AnioComprado, estado Estado){
+JuegoMesa::JuegoMesa(string Nombre, int AnioComprado, estado Estado, int EdadRecomendada, int CantJugadores): Objeto(Nombre, AnioComprado, Estado){
     this->EdadRecomendada = EdadRecomendada;
     this->CantJugadores = CantJugadores;
 }
