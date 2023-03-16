@@ -13,9 +13,7 @@ Libro::Libro(string Titulo, int Fecha){
 }
 // Implementacion del destructor
 Libro::~Libro() {
-    if (this->Prestado != NULL) {
-        delete this->Prestado;
-    }
+    this->del_Owner();
 }
 // Implementacion de los getters y setters...
 void Libro::set_Titulo(string Titulo) {
@@ -35,12 +33,14 @@ int Libro::get_FechaPublicacion() {
 }
 
 // Implementacion de las operaciones para manipular Links...
-void Libro::set_Owner(Persona &owner) {
-    this->Prestado = &owner;
+Persona* Libro::get_Owner() {
+    return this->Prestado;
 }
-void Libro::del_Owner() {
-    if (this->Prestado != NULL) {
-        delete this->Prestado;
+
+void Libro::set_Owner(Persona *owner) {
+    this->Prestado = owner;
+}
+void Libro::del_Owner() {  
+        this->Prestado->del_Book(this);    
         this->Prestado = NULL;
-    }
 }

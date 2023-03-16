@@ -10,7 +10,8 @@ class Libro {
         Persona *Prestado;
     public:
         // Opepraciones Auxiliares Para Manipular El Link...
-        void set_Owner(Persona &owner);
+        Persona* get_Owner();
+        void set_Owner(Persona *owner);
         void del_Owner();
         // Defino los constructores...
         Libro();

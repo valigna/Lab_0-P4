@@ -13,8 +13,8 @@ class Persona {
         vector<Libro *> Prestados;
     public:
         // Operaciones Auxiliares Para Manipular el Link...
-        void add_Book(Libro &book);
-        void del_Book(Libro &book);
+        void add_Book(Libro *book);
+        void del_Book(Libro *book);
 
         // Defino los constructores...
         Persona();
