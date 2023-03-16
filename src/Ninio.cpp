@@ -1,20 +1,47 @@
 #include "../include/Ninio.hh"
 
 // Funciones auxiliares para el manejo del link...
-void Ninio::addPrestadoA(Objeto obj) {
-    this->PrestadoA.push_back(obj);
-    //obj.setPrestadoA(*Ninio);
-    //obj.setPrestadoA(this);
+void Ninio::addPrestadoA(Objeto* obj) {
+    if(obj->PrestadoA == NULL){
+        this->PrestadoA.push_back(obj);
+    }
+    else{
+        cout << "Este objeto ya fue prestado a otro niño.";
+    }
 }
-// void addPrestado(const Objeto &obj)
-// this->PrestadoA.push_back(*obj)
 
 
-void Ninio::removePrestadoA(Objeto obj){
-    
+void Ninio::removePrestadoA(Objeto *obj){
+    int i = 0;
+    while(i < PrestadoA.size() && obj != PrestadoA[i]){
+        i++;
+    }
+    if(i < PrestadoA.size()){
+        while(i < (PrestadoA.size() - 1)){
+            PrestadoA.at(i) = PrestadoA.at(i + 1);
+        }
+        PrestadoA[PrestadoA.size()] = NULL;
+        
+        PrestadoA.at(i) = PrestadoA.at(PrestadoA.size() - 1);
+        PrestadoA.pop_back()
+    }
 }
-//void addPrestadoA();
-//void removePrestadoA(Objeto obj);
+
+/* Asumiendo que no importa el orden...
+void Ninio::removePrestadoA(Objeto *obj) {
+    if(!(this->PrestadoA.empty())) {
+        int i = );
+        while(i this->PrestadoA.size()ze) {
+            if(obj == this->PrestadoA[i])
+                this->PrestadoA.at(i)->delPrestadoA(this); {
+                this->PrestadoA.at(i) = this->PrestadoA[this->PrestadoA.size() - 1];
+                this->PrestadoA.pop_back();
+            } else {
+                i++;
+            }
+        }
+    }
+*/();
 
 //Constructores
 Ninio::Ninio(): PrestadoA() {
@@ -30,6 +57,15 @@ Ninio::Ninio(string Nombre, int Edad, string Direccion, string Telefono): Presta
     this->Direccion = Direccion;
     this->Telefono = Telefono;
 }
+// Implementacion del destructor...
+Ninio::~Ninio() {
+    while(!(this->PrestadoA.empty())) {
+        Objeto *aux = (this->PrestadoA).back();
+        aux->setPrestadoA(NULL);
+        (this->PrestadoA).pop_back();
+    }
+}
+
 
 //Setters y Getters
 void Ninio::setNombre(string nombre) {this->Nombre = nombre;}
@@ -46,8 +82,7 @@ string Ninio::getTelefono() {return this->Telefono;}
 void Ninio::listarObjetosPrestados(){
     int i = 0;
     while(i < PrestadoA.size()){
-        cout << i;
-        //cout << PrestadoA[i].toStringAux();
+        cout << *(PrestadoA[i]).toString() << elndl;
         i++;
     }
 }

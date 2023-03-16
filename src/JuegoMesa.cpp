@@ -31,9 +31,7 @@ JuegoMesa::JuegoMesa(string Nombre, int AnioComprado, estado Estado, int EdadRec
 
 
 //Destructor
-JuegoMesa::~JuegoMesa(){
-
-}
+JuegoMesa::~JuegoMesa(){ }
 
 
 //Otras Funciones

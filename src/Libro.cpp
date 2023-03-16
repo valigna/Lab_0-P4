@@ -36,6 +36,4 @@ string Libro::toString(){
 
 
 // Implementacion del destructor...
-Libro::~Libro(){
-
-}
+Libro::~Libro(){ }

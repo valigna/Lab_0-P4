@@ -13,6 +13,18 @@ private:
     string EstadoToString();
     Ninio *PrestadoA;
 public:
+    // Defino operaciones auxiliares para manipular el link...
+    Ninio* getPrestadoA();
+    void setPrestadoA(Objeto *obj);
+    void delPrestadoA(); 
+
+    //Defino constructores
+    Objeto();
+    Objeto(string Nombre, int AnioComprado, estado Estado);
+
+    //Defino destructores
+    ~Objeto();
+
     //Defino getters y setters
     string getNombre();
     void setNombre(string nombre);
@@ -23,16 +35,9 @@ public:
     void setPrestadoA(Ninio *PrestadoA);
     Ninio* getPrestadoA();
 
-    //Defino constructores
-    Objeto();
-    Objeto(string Nombre, int AnioComprado, estado Estado);
-
     //Defino otras funciones
     virtual string toString();
     string toStringAux();
-
-    //Defino destructores
-    ~Objeto();
 };
 
 #endif

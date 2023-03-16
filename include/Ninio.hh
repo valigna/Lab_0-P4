@@ -12,8 +12,7 @@ private:
     int Edad;
     string Direccion;
     string Telefono;
-    //vector<Objeto> PrestadoA;
-    vector<*Objeto> PrestadoA;
+    vector<Objeto *> PrestadoA;
 public:
     //Defino constructores
     Ninio();
@@ -30,8 +29,8 @@ public:
     string getTelefono();
 
     // Funciones auxiliares para el manejo del link
-    void addPrestadoA(Objeto obj);
-    void removePrestadoA(Objeto obj);
+    void addPrestadoA(Objeto *obj);
+    void removePrestadoA(Objeto *obj);
 
     //Defino otras operaciones
     void listarObjetosPrestados();

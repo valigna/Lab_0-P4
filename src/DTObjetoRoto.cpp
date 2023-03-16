@@ -1,6 +1,5 @@
 #include "../include/DTObjetoRoto.hh"
 
-
 //Constructores
 DTObjetoRoto::DTObjetoRoto(){
     this->NombreObjeto = " ";
@@ -42,7 +41,6 @@ void DTObjetoRoto::setNombreNinio(string nombre) {
 string DTObjetoRoto::getNombreNinio() {
     return this->NombreNinio;
 }
-
 
 //Destructor
 DTObjetoRoto::~DTObjetoRoto(){}
