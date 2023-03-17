@@ -32,8 +32,6 @@ public:
     void setAnio(int anio);
     estado getEstado();
     void setEstado(estado Estado);
-    void setPrestadoA(Ninio *PrestadoA);
-    Ninio* getPrestadoA();
 
     // Otras operaciones
     virtual string toString();

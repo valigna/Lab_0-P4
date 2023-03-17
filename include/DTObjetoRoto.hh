@@ -2,6 +2,7 @@
 #define DT_OBJETO_ROTO
 
 #include "Utils.hh"
+#include "Objeto.hh"
 
 class DTObjetoRoto
 {
@@ -11,7 +12,7 @@ private:
     string NombreNinio;
 public:
     // Defino Constructores
-    DTObjetoRoto();
+    DTObjetoRoto(Objeto *obj);
     DTObjetoRoto(string nObj, bool p, string nNin);
     DTObjetoRoto(const DTObjetoRoto &obj);
 

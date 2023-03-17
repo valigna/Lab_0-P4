@@ -1,10 +1,15 @@
 #include "../include/DTObjetoRoto.hh"
 
 //Constructores
-DTObjetoRoto::DTObjetoRoto(){
-    this->NombreObjeto = " ";
-    this->Prestado = false;
-    this->NombreNinio = " ";
+DTObjetoRoto::DTObjetoRoto(Objeto *obj){
+    this->NombreObjeto = obj->getNombre();
+    this->Prestado = ((obj->getPrestadoA()) != NULL );
+    if (this->Prestado) {
+        this->NombreNinio = obj->getPrestadoA()->getNombre();
+    }
+    else {
+      this->NombreNinio = " ";  
+    }
 }
 
 DTObjetoRoto::DTObjetoRoto(string nObj, bool p, string nNin) {

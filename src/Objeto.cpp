@@ -50,15 +50,6 @@ estado Objeto::getEstado()
     return Estado;
 }
 
-void Objeto::setPrestadoA(Ninio *PrestadoA){
-    this->PrestadoA = PrestadoA;
-}
-
-Ninio* Objeto::getPrestadoA()
-{
-    return PrestadoA;
-}
-
 void Objeto::setNombre(string nombre){
     this->Nombre = nombre;
 }
