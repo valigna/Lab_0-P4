@@ -37,7 +37,7 @@ public:
     string getTelefono();
 
     // Otras operaciones
-    void listarObjetosPrestados();
+    forward_list<string> listarObjetosPrestados();
 };
 
 #include "../include/Objeto.hh"

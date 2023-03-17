@@ -15,7 +15,7 @@ private:
 public:
     // Defino operaciones auxiliares para manipular los links...
     Ninio* getPrestadoA();
-    void setPrestadoA(Objeto *obj);
+    void setPrestadoA(Ninio *ninio);
     void delPrestadoA(); 
 
     // Defino Constructores

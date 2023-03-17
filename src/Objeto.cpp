@@ -5,8 +5,8 @@ Ninio* Objeto::getPrestadoA() {
     return this->PrestadoA;
 }
 
-void Objeto::setPrestadoA(Objeto *obj) {
-    this->PrestadoA = obj;
+void Objeto::setPrestadoA(Ninio *ninio) {
+    this->PrestadoA = ninio;
 }
 
 void Objeto::delPrestadoA(){
@@ -89,4 +89,3 @@ string Objeto::EstadoToString(){
 string Objeto::toStringAux() {
     return this->Nombre + ", " + std::to_string(this->AnioComprado) + ", " + this->EstadoToString() + ", ";
 }
-

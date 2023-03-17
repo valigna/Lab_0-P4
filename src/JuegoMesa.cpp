@@ -2,7 +2,7 @@
 
 //getters y setters
 void JuegoMesa::setEdadRecomendada(int n){
-    this->EdadRecomendada = EdadRecomendada;
+    this->EdadRecomendada = n;
 }
 
 void JuegoMesa::setCantJugadores(int h){

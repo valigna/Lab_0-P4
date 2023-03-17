@@ -2,14 +2,8 @@
 
 // Funciones auxiliares para el manejo del link...
 void Ninio::addPrestadoA(Objeto* obj) {
-    if(obj->PrestadoA == NULL){
         this->PrestadoA.push_back(obj);
-    }
-    else{
-        cout << "Este objeto ya fue prestado a otro niño.";
-    }
 }
-
 
 void Ninio::removePrestadoA(Objeto *obj){
     int i = 0;
@@ -23,7 +17,7 @@ void Ninio::removePrestadoA(Objeto *obj){
         PrestadoA[PrestadoA.size()] = NULL;
         
         PrestadoA.at(i) = PrestadoA.at(PrestadoA.size() - 1);
-        PrestadoA.pop_back()
+        PrestadoA.pop_back();
     }
 }
 
@@ -43,7 +37,7 @@ void Ninio::removePrestadoA(Objeto *obj) {
     }
 */;
 
-//Constructores
+// Implementacion de los Constructores...
 Ninio::Ninio(): PrestadoA() {
     this->Nombre = "";
     this->Edad = 0;
@@ -57,7 +51,7 @@ Ninio::Ninio(string Nombre, int Edad, string Direccion, string Telefono): Presta
     this->Direccion = Direccion;
     this->Telefono = Telefono;
 }
-// Implementacion del destructor...
+// Implementacion del Destructor...
 Ninio::~Ninio() {
     while(!(this->PrestadoA.empty())) {
         Objeto *aux = (this->PrestadoA).back();
@@ -65,7 +59,6 @@ Ninio::~Ninio() {
         (this->PrestadoA).pop_back();
     }
 }
-
 
 //Setters y Getters
 void Ninio::setNombre(string nombre) {this->Nombre = nombre;}
@@ -79,10 +72,12 @@ string Ninio::getDireccion() {return this->Direccion;}
 string Ninio::getTelefono() {return this->Telefono;}
 
 //Otras Funciones
-void Ninio::listarObjetosPrestados(){
+forward_list<string> Ninio::listarObjetosPrestados(){
     int i = 0;
+    forward_list<string> res;
     while(i < PrestadoA.size()){
-        cout << *(PrestadoA[i]).toString() << endl;
+        res.push_front(this->PrestadoA[i]->toString());
         i++;
     }
+    return res;
 }
