@@ -41,7 +41,7 @@ void Ninio::removePrestadoA(Objeto *obj) {
             }
         }
     }
-*/();
+*/;
 
 //Constructores
 Ninio::Ninio(): PrestadoA() {
@@ -82,7 +82,7 @@ string Ninio::getTelefono() {return this->Telefono;}
 void Ninio::listarObjetosPrestados(){
     int i = 0;
     while(i < PrestadoA.size()){
-        cout << *(PrestadoA[i]).toString() << elndl;
+        cout << *(PrestadoA[i]).toString() << endl;
         i++;
     }
 }

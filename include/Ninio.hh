@@ -1,9 +1,10 @@
-#include "Utils.hh"
-class Objeto{};
-
-
 #ifndef NINIO
 #define NINIO
+
+#include "Utils.hh"
+
+// Declaracion en avanzada de la clase Objeto
+class Objeto;
 
 class Ninio
 {
@@ -14,11 +15,18 @@ private:
     string Telefono;
     vector<Objeto *> PrestadoA;
 public:
-    //Defino constructores
+    // Defino operaciones auxiliares para manipular los links...
+    void addPrestadoA(Objeto *obj);
+    void removePrestadoA(Objeto *obj);
+
+    //Defino Constructores
     Ninio();
     Ninio(string Nombre, int Edad, string Direccion, string Telefono);
 
-    //Defino setters y getters
+    //Defino el Destructor
+    ~Ninio();
+
+    //Defino Getters y Setters
     void setNombre(string nombre);
     void setEdad(int edad);
     void setDireccion(string direccion);
@@ -28,15 +36,10 @@ public:
     string getDireccion();
     string getTelefono();
 
-    // Funciones auxiliares para el manejo del link
-    void addPrestadoA(Objeto *obj);
-    void removePrestadoA(Objeto *obj);
-
-    //Defino otras operaciones
+    // Otras operaciones
     void listarObjetosPrestados();
-
-    //Defino Destructor
-    ~Ninio();
 };
+
+#include "../include/Objeto.hh"
 
 #endif

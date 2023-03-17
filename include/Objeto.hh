@@ -1,8 +1,8 @@
-#include "Utils.hh"
-#include "Ninio.hh"
-
 #ifndef OBJETO
 #define OBJETO
+
+#include "Utils.hh"
+#include "Ninio.hh"
 
 class Objeto
 {
@@ -13,19 +13,19 @@ private:
     string EstadoToString();
     Ninio *PrestadoA;
 public:
-    // Defino operaciones auxiliares para manipular el link...
+    // Defino operaciones auxiliares para manipular los links...
     Ninio* getPrestadoA();
     void setPrestadoA(Objeto *obj);
     void delPrestadoA(); 
 
-    //Defino constructores
+    // Defino Constructores
     Objeto();
     Objeto(string Nombre, int AnioComprado, estado Estado);
 
-    //Defino destructores
+    // Defino el Destructor
     ~Objeto();
 
-    //Defino getters y setters
+    // Defino Getters y Setters
     string getNombre();
     void setNombre(string nombre);
     int getAnio();
@@ -35,7 +35,7 @@ public:
     void setPrestadoA(Ninio *PrestadoA);
     Ninio* getPrestadoA();
 
-    //Defino otras funciones
+    // Otras operaciones
     virtual string toString();
     string toStringAux();
 };

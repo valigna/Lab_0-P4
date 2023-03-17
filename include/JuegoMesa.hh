@@ -1,31 +1,31 @@
-#include "Utils.hh"
-#include "Objeto.hh"
-
 #ifndef JUEGO_MESA
 #define JUEGO_MESA
+
+#include "Utils.hh"
+#include "Objeto.hh"
 
 class JuegoMesa : public Objeto
 {
 private:
     int EdadRecomendada;
     int CantJugadores;
-
 public:
-    // Defino los constructores...
+    // Defino Constructores
     JuegoMesa();
     JuegoMesa(string Nombre, int AnioComprado, estado Estado, int EdadRecomendada, int CantJugadores);
 
-    // Defino los getters y setters...
+    // Defino el Destructor
+    ~JuegoMesa();
+
+    // Defino Getters y Setters
     void setEdadRecomendada(int EdadRecomendada);
     int getEdadRecomendada();
     void setCantJugadores(int cantJugadores);
     int getCantJugadores();
 
-    // Resto de las funciones...
+    // Otras Operaciones
     string toString();
 
-    // Defino el destructor
-    ~JuegoMesa();
 };
 
 #endif
