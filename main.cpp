@@ -65,13 +65,13 @@ int main() {
         }
 }
     
-    // Parte g)
-    std::map<std::string, DTObjetoRoto *> mapaObjetosRotos;
-    for(auto& x: mapaObjetos){
-        if((x.second)->getEstado() == Roto){
-            mapaObjetosRotos.emplace((x.second)->getNombre(), DTObjetoRoto(x.second));
-        }
-    }
+     // Parte g)
+     std::map<string, DTObjetoRoto *> mapaObjetosRotos;
+     for(auto& x: mapaObjetos){
+         if((x.second)->getEstado() == Roto){
+             mapaObjetosRotos.emplace((x.second)->getNombre(), new DTObjetoRoto(x.second));
+         }
+     }
     
     // Parte h)
 
