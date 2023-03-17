@@ -1,11 +1,6 @@
 #include "../include/Libro.hh"
 
 // Implementacion de los constructores...
-Libro::Libro() : Objeto(){
-    this->Autor = " ";
-    this->CantPaginas = 0;
-}
-
 Libro::Libro(string Nombre, int AnioComprado, estado Estado, string autor, int CantPaginas) : Objeto(Nombre, AnioComprado, Estado){
     this->Autor = autor;
     this->CantPaginas = CantPaginas;

@@ -19,7 +19,6 @@ public:
     void delPrestadoA(); 
 
     // Defino Constructores
-    Objeto();
     Objeto(string Nombre, int AnioComprado, estado Estado);
 
     // Defino el Destructor

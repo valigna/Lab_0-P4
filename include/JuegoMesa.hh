@@ -11,7 +11,6 @@ private:
     int CantJugadores;
 public:
     // Defino Constructores
-    JuegoMesa();
     JuegoMesa(string Nombre, int AnioComprado, estado Estado, int EdadRecomendada, int CantJugadores);
 
     // Defino el Destructor

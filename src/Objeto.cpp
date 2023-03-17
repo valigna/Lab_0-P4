@@ -15,13 +15,6 @@ void Objeto::delPrestadoA(){
 }
 
 // Constructores...
-Objeto::Objeto(){
-    this->Nombre = "";
-    this->AnioComprado = 0;
-    //this->Estado = ??
-    this->PrestadoA = NULL;
-}
-
 Objeto::Objeto(string Nombre, int AnioComprado, estado Estado){
     this->Nombre = Nombre;
     this->AnioComprado = AnioComprado;

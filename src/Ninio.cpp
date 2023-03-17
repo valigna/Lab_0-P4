@@ -38,13 +38,6 @@ void Ninio::removePrestadoA(Objeto *obj) {
 */;
 
 // Implementacion de los Constructores...
-Ninio::Ninio(): PrestadoA() {
-    this->Nombre = "";
-    this->Edad = 0;
-    this->Direccion = "";
-    this->Telefono = "";
-}
-
 Ninio::Ninio(string Nombre, int Edad, string Direccion, string Telefono): PrestadoA() {
     this->Nombre = Nombre;
     this->Edad = Edad;

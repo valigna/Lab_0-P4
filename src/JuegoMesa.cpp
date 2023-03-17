@@ -19,11 +19,6 @@ int JuegoMesa::getCantJugadores(){
 
 
 //Constructores
-JuegoMesa::JuegoMesa() : Objeto(){
-    this->CantJugadores = 0;
-    this->EdadRecomendada = 0;
-}
-
 JuegoMesa::JuegoMesa(string Nombre, int AnioComprado, estado Estado, int EdadRecomendada, int CantJugadores): Objeto(Nombre, AnioComprado, Estado){
     this->EdadRecomendada = EdadRecomendada;
     this->CantJugadores = CantJugadores;

@@ -11,7 +11,6 @@ private:
     int CantPaginas;
 public:
     // Defino Constructores
-    Libro();
     Libro(string Nombre, int AnioComprado, estado Estado, string autor, int CantPaginas);
     
     // Defino el Destructor

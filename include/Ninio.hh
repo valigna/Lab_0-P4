@@ -20,7 +20,6 @@ public:
     void removePrestadoA(Objeto *obj);
 
     //Defino Constructores
-    Ninio();
     Ninio(string Nombre, int Edad, string Direccion, string Telefono);
 
     //Defino el Destructor
