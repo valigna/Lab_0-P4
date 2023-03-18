@@ -1,6 +1,3 @@
-#ifndef UTILS
-#define UTILS
-
 #include<string>
 #include<vector>
 #include<map>
@@ -10,5 +7,7 @@
 
 using namespace std;
 
+#ifndef UTILS
+#define UTILS
 enum estado {Nuevo, BienConservado, Roto};
 #endif

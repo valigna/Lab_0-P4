@@ -70,10 +70,23 @@ int main() {
     Objeto* dummy = mapaObjetos["Uno"];
     mapaObjetos.erase("Uno");
     for(auto& x: mapaObjetos) {
+
         Ninio *n = (x.second)->getPrestadoA();
+        bool estabaRoto = false;
+        if( ((x.second)->getEstado()) == Roto) {estabaRoto = true;}
+
+        // Borramos el objeto...
+
+        // Consultamos la nueva lista de objetos prestados del Ninio anteriormente linkeado con el objeto...
         forward_list<string> lista = n->listarObjetosPrestados();
         while ((!lista.empty())) {
-            
+            cout << "Ninio: " << (n->getNombre()) << "Objeto : " << lista.front() << endl;
+            lista.pop_front();
+        }
+
+        // En caso de que fuera un objeto "Roto", consultamos nuevamente la lista de objetos rotos...
+        if (estabaRoto) {
+            for()
         }
     }
 

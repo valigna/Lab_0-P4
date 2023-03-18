@@ -3,6 +3,7 @@
 #include "src/Libro.cpp"
 #include "src/Ninio.cpp"
 #include "src/DTObjetoRoto.cpp"
+#include <iostream>
 
 void setLink(Objeto *obj, Ninio *ninio) {
     obj->setPrestadoA(ninio);
@@ -24,3 +25,5 @@ std::ostream& operator<<(std::ostream& os, const myclass& obj)
 }
 
 */
+
+std::ostream &operator<<(std::ostream &os, DTObjetoRoto const &obj)
