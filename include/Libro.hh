@@ -1,8 +1,7 @@
-#include "Utils.hh"
-
 #ifndef LIBRO
 #define LIBRO
 
+#include "Utils.hh"
 #include "Objeto.hh"
 
 class Libro : public Objeto

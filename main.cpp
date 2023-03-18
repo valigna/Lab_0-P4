@@ -1,31 +1,9 @@
-#include "src/Objeto.cpp"
-#include "src/JuegoMesa.cpp"
-#include "src/Libro.cpp"
-#include "src/Ninio.cpp"
-#include "src/DTObjetoRoto.cpp"
-
-// Funciones auxiliares
-void setLink(Objeto *obj, Ninio *ninio) {
-    obj->setPrestadoA(ninio);
-    ninio->addPrestadoA(obj);
-}
+#include "utilsMain.cpp"
 
 int main() {
     //Opcion con Map... | Creacion de los conjuntos Objeto y Ninio dados por la letra...
     // Partes a) y b))
     std::map<string,Objeto *> mapaObjetos;
-    //--INSERT--
-    //Libros...
-    // mapaObjetos.insert (std::pair<string, Objeto *>("Nacidos de la bruma: El imperio final", new Libro("Nacidos de la bruma: El imperio final", 2022, Roto, "Brandon Sanderson", 688)));
-    // mapaObjetos.insert (std::pair<string, Objeto *>("Las Malas", new Libro("Las Malas", 2022, Nuevo, "Camila Sosa Villada", 240)));
-    // mapaObjetos.insert (std::pair<string, Objeto *>("El cocodrilo al que no le gustaba el agua", new Libro("El cocodrilo al que no le gustaba el agua", 2016, Roto, "Gemma Merino", 32)));
-    
-    // //Juegos...
-    // mapaObjetos.insert (std::pair<string, Objeto *>("Uno", new JuegoMesa("Uno", 2022, Roto, 7, 10)));
-    // mapaObjetos.insert (std::pair<string, Objeto *>("Mazo de Cartas", new JuegoMesa("Mazo de Cartas", 2019, Nuevo, 7, 4)));
-    // mapaObjetos.insert (std::pair<string, Objeto *>("Dados", new JuegoMesa("Dados", 2020, Roto, 2, 6)));
-    //--INSERT--
-     
     
     // --EMPLACE--
     // Libros...
@@ -87,8 +65,17 @@ int main() {
          }
      }
      cout << "-------------------------------" << endl;
-     
+    
     // Parte h)
+    Objeto* dummy = mapaObjetos["Uno"];
+    mapaObjetos.erase("Uno");
+    for(auto& x: mapaObjetos) {
+        Ninio *n = (x.second)->getPrestadoA();
+        forward_list<string> lista = n->listarObjetosPrestados();
+        while ((!lista.empty())) {
+            
+        }
+    }
 
     return 1;
     

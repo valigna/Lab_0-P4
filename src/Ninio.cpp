@@ -1,6 +1,6 @@
 #include "../include/Ninio.hh"
 
-// Funciones auxiliares para el manejo del link...
+// Implementacion de las operaciones auxiliares para el manejo del link...
 void Ninio::addPrestadoA(Objeto* obj) {
         this->PrestadoA.push_back(obj);
 }
@@ -47,24 +47,25 @@ Ninio::Ninio(string Nombre, int Edad, string Direccion, string Telefono): Presta
 // Implementacion del Destructor...
 Ninio::~Ninio() {
     while(!(this->PrestadoA.empty())) {
-        Objeto *aux = (this->PrestadoA).back();
-        aux->setPrestadoA(NULL);
+        (this->PrestadoA).back()->setPrestadoA(NULL);
         (this->PrestadoA).pop_back();
     }
 }
 
-//Setters y Getters
+// Implementacion de los Getters y Setters...
+string Ninio::getNombre() {return this->Nombre;}
 void Ninio::setNombre(string nombre) {this->Nombre = nombre;}
+
+int Ninio::getEdad() {return this->Edad;}
 void Ninio::setEdad(int edad) {this->Edad = edad;}
+
+string Ninio::getDireccion() {return this->Direccion;}
 void Ninio::setDireccion(string direccion) {this->Direccion = direccion;}
+
+string Ninio::getTelefono() {return this->Telefono;}
 void Ninio::setTelefono(string telefono) {this->Telefono = telefono;}
 
-string Ninio::getNombre() {return this->Nombre;}
-int Ninio::getEdad() {return this->Edad;}
-string Ninio::getDireccion() {return this->Direccion;}
-string Ninio::getTelefono() {return this->Telefono;}
-
-//Otras Funciones
+// Implementacion de las demas operaciones...
 forward_list<string> Ninio::listarObjetosPrestados(){
     int i = 0;
     forward_list<string> res;

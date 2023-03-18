@@ -1,7 +1,7 @@
 #include "../include/DTObjetoRoto.hh"
 
-//Constructores
-DTObjetoRoto::DTObjetoRoto(Objeto *obj){
+// Implementacion de los Constructores...
+DTObjetoRoto::DTObjetoRoto(Objeto *obj) {
     this->NombreObjeto = obj->getNombre();
     this->Prestado = ((obj->getPrestadoA()) != NULL );
     if (this->Prestado) {
@@ -24,28 +24,15 @@ DTObjetoRoto::DTObjetoRoto(const DTObjetoRoto &obj) {
     this->NombreNinio = obj.NombreNinio;
 }
 
-// getters y setters
-void DTObjetoRoto::setNombreObjeto(string nombre) {
-    this->NombreObjeto = nombre;
-}
-
-string DTObjetoRoto::getNombreObjeto() {
-    return this->NombreObjeto;
-}
-
-void DTObjetoRoto::setPrestado(bool p) {
-    this->Prestado = p;
-}
-bool DTObjetoRoto::getPrestado() {
-    return this->Prestado;
-}
-
-void DTObjetoRoto::setNombreNinio(string nombre) {
-    this->NombreNinio = nombre;
-}
-string DTObjetoRoto::getNombreNinio() {
-    return this->NombreNinio;
-}
-
-//Destructor
+// Implementacion del Destructor...
 DTObjetoRoto::~DTObjetoRoto(){}
+
+// Implementacion de los Getters y Setters...
+string DTObjetoRoto::getNombreObjeto() {return this->NombreObjeto;}
+void DTObjetoRoto::setNombreObjeto(string nombre) {this->NombreObjeto = nombre;}
+
+bool DTObjetoRoto::getPrestado() {return this->Prestado;}
+void DTObjetoRoto::setPrestado(bool p) {this->Prestado = p;}
+
+string DTObjetoRoto::getNombreNinio() {return this->NombreNinio;}
+void DTObjetoRoto::setNombreNinio(string nombre) {this->NombreNinio = nombre;}

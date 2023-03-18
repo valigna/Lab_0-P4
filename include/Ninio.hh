@@ -1,7 +1,7 @@
-#include "Utils.hh"
-
 #ifndef NINIO
 #define NINIO
+
+#include "Utils.hh"
 
 // Declaracion en avanzada de la clase Objeto
 class Objeto;

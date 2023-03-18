@@ -1,6 +1,6 @@
 #include "../include/Objeto.hh"
 
-// Implementacion de las funciones auxiliares para manipular el link...
+// Implementacion de las operaciones auxiliares para manipular el link...
 Ninio* Objeto::getPrestadoA() {    
     return this->PrestadoA;
 }
@@ -9,13 +9,13 @@ void Objeto::setPrestadoA(Ninio *ninio) {
     this->PrestadoA = ninio;
 }
 
-void Objeto::delPrestadoA(){
+void Objeto::delPrestadoA() {
     this->PrestadoA->removePrestadoA(this);
     this->PrestadoA = NULL;
 }
 
-// Constructores...
-Objeto::Objeto(string Nombre, int AnioComprado, estado Estado){
+// Implementacion de los Constructores...
+Objeto::Objeto(string Nombre, int AnioComprado, estado Estado) {
     this->Nombre = Nombre;
     this->AnioComprado = AnioComprado;
     this->Estado = Estado;
@@ -27,36 +27,20 @@ Objeto::~Objeto() {
     this->delPrestadoA();    
 }
 
-// Setters y Getters...
-string Objeto::getNombre()  
-{
-    return Nombre;
-}
+// Implementacion de los Getters y Setters...
+string Objeto::getNombre(){return Nombre;}
+void Objeto::setNombre(string nombre){this->Nombre = nombre;}
 
-int Objeto::getAnio()
-{
-    return AnioComprado;
-}
+int Objeto::getAnio(){return AnioComprado;}
+void Objeto::setAnio(int anio){this->AnioComprado = anio;}
 
-estado Objeto::getEstado() 
-{
-    return Estado;
-}
+estado Objeto::getEstado(){return Estado;}
+void Objeto::setEstado(estado Estado){this->Estado = Estado;}
 
-void Objeto::setNombre(string nombre){
-    this->Nombre = nombre;
-}
+// Implementacion de las demas operaciones...
+string Objeto::toString() {return "";}
 
-void Objeto::setAnio(int anio){
-    this->AnioComprado = anio;
-}
-
-void Objeto::setEstado(estado Estado){
-    this->Estado = Estado;
-}
-
-
-// Funciones Auxiliares...
+// Implementacion de las Operaciones Auxiliares...
 string Objeto::EstadoToString(){
     switch (this->Estado)
     {
@@ -73,5 +57,3 @@ string Objeto::EstadoToString(){
 string Objeto::toStringAux() {
     return this->Nombre + ", " + std::to_string(this->AnioComprado) + ", " + this->EstadoToString() + ", ";
 }
-
-string Objeto::toString() {return "";}

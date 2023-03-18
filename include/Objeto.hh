@@ -1,8 +1,7 @@
-#include "Utils.hh"
-
 #ifndef OBJETO
 #define OBJETO
 
+#include "Utils.hh"
 #include "Ninio.hh"
 
 class Objeto

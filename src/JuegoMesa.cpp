@@ -1,53 +1,24 @@
 #include "../include/JuegoMesa.hh"
 
-//getters y setters
-void JuegoMesa::setEdadRecomendada(int n){
-    this->EdadRecomendada = n;
-}
-
-void JuegoMesa::setCantJugadores(int h){
-    this->CantJugadores = h;
-}
-
-int JuegoMesa::getEdadRecomendada(){
-    return this->EdadRecomendada;
-}
-
-int JuegoMesa::getCantJugadores(){
-    return this->CantJugadores;
-}
-
-
-//Constructores
+// Implementacion de los Constructores...
 JuegoMesa::JuegoMesa(string Nombre, int AnioComprado, estado Estado, int EdadRecomendada, int CantJugadores): Objeto(Nombre, AnioComprado, Estado){
     this->EdadRecomendada = EdadRecomendada;
     this->CantJugadores = CantJugadores;
 }
 
-
-//Destructor
+// Implementacion del Destructor...
 JuegoMesa::~JuegoMesa(){ }
 
+// Implementacion de los Getters y Setters
+int JuegoMesa::getEdadRecomendada(){return this->EdadRecomendada;}
+void JuegoMesa::setEdadRecomendada(int n){this->EdadRecomendada = n;}
 
-//Otras Funciones
+int JuegoMesa::getCantJugadores(){return this->CantJugadores;}
+void JuegoMesa::setCantJugadores(int h){this->CantJugadores = h;}
+
+
+// Implementacion de las demas operaciones...
 string JuegoMesa::toString(){
-    //string res;
-    
-    //string n = this->getNombre();
-    //int a = this->getAnio();
-
     return "Juego: " + this->toStringAux() + std::to_string(this->EdadRecomendada) + ", " + std::to_string(this->CantJugadores);
 }
-
-// std::to_string(this->CantJugadores)
-
-// JuegoMesa a;
-// Objeto* b = dynamic_cast<Objeto*>(&a);
-/*
-
-Juego: Nombre, AñoComprado, Estado, EdadRecomendada, CantJugadores
-
-juego.getNombre()
-
-*/
 
