@@ -1,7 +1,8 @@
+#include "Utils.hh"
+
 #ifndef JUEGO_MESA
 #define JUEGO_MESA
 
-#include "Utils.hh"
 #include "Objeto.hh"
 
 class JuegoMesa : public Objeto

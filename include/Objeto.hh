@@ -1,7 +1,8 @@
+#include "Utils.hh"
+
 #ifndef OBJETO
 #define OBJETO
 
-#include "Utils.hh"
 #include "Ninio.hh"
 
 class Objeto
@@ -22,7 +23,7 @@ public:
     Objeto(string Nombre, int AnioComprado, estado Estado);
 
     // Defino el Destructor
-    ~Objeto();
+    virtual ~Objeto();
 
     // Defino Getters y Setters
     string getNombre();

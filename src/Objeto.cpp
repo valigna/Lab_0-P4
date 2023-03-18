@@ -73,3 +73,5 @@ string Objeto::EstadoToString(){
 string Objeto::toStringAux() {
     return this->Nombre + ", " + std::to_string(this->AnioComprado) + ", " + this->EstadoToString() + ", ";
 }
+
+string Objeto::toString() {return "";}
