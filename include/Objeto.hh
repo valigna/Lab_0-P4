@@ -23,7 +23,7 @@ public:
     Objeto(string Nombre, int AnioComprado, estado Estado);
 
     // Defino el Destructor
-    virtual ~Objeto();
+    ~Objeto();
 
     // Defino Getters y Setters
     string getNombre();

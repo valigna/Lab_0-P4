@@ -40,15 +40,16 @@ int main() {
     // --EMPLACE--
 
     // Parte c)
-    // std::map<std::string, Objeto *>::iterator it = mapaObjetos.begin();
-    // while (it != mapaObjetos.end()) {
-    //     cout << (it->second)->toString() << endl;
-    // }
-
+    cout << "-------------------------------" << endl;
+    cout << "Imprimiendo los objetos creados" << endl;
+    cout << "-------------------------------" << endl;
     for(auto& x: mapaObjetos){
         cout << (x.second)->toString() << endl;
     }
+    cout << "-------------------------------" << endl;
     
+
+
     // Parte d)
     std::map<std::string, Ninio *> mapaNinios;
     //--EMPLACE--
@@ -64,21 +65,28 @@ int main() {
     setLink(mapaObjetos["El cocodrilo al que no le gustaba el agua"],mapaNinios["Alex"]);
     
     // Parte f)
+    cout << "Imprimiendo los objetos prestados" << endl;
+    cout << "-------------------------------" << endl;
     for(auto& x: mapaNinios){
         forward_list<string> aux = (x.second)->listarObjetosPrestados();
         while ((!aux.empty())) {
-            cout << aux.front() << endl;
+            cout << "Niño: " << (x.second)->getNombre() << "Objeto: " << aux.front() << endl;
             aux.pop_front();
         }
     }
+    cout << "-------------------------------" << endl;
     
      // Parte g)
      std::map<string, DTObjetoRoto *> mapaObjetosRotos;
+     cout << "Imprimiendo los objetos rotos" << endl;
+     cout << "-------------------------------" << endl;
      for(auto& x: mapaObjetos){
          if((x.second)->getEstado() == Roto){
              mapaObjetosRotos.emplace((x.second)->getNombre(), new DTObjetoRoto(x.second));
+             cout << (x.second)->toString() << endl;
          }
      }
+     cout << "-------------------------------" << endl;
      
     // Parte h)
 
