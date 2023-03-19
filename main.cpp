@@ -72,8 +72,7 @@ int main() {
     for(auto& x: mapaObjetos) {
 
         Ninio *n = (x.second)->getPrestadoA();
-        bool estabaRoto = false;
-        if( ((x.second)->getEstado()) == Roto) {estabaRoto = true;}
+        bool estabaRoto = ((x.second)->getEstado()) == Roto;
 
         // Borramos el objeto...
 
@@ -86,8 +85,11 @@ int main() {
 
         // En caso de que fuera un objeto "Roto", consultamos nuevamente la lista de objetos rotos...
         if (estabaRoto) {
-            for()
+            for(auto& x : mapaObjetosRotos) {
+                cout << &(x.second);
+            }
         }
+
     }
 
     return 1;
