@@ -15,28 +15,9 @@ void Ninio::removePrestadoA(Objeto *obj){
             PrestadoA.at(i) = PrestadoA.at(i + 1);
             i++;
         }
-        // PrestadoA[PrestadoA.size() - 1] = NULL;
-        
-        //PrestadoA.at(i) = PrestadoA.at(PrestadoA.size() - 1);
         PrestadoA.pop_back();
     }
 }
-
-/* // Asumiendo que no importa el orden...
-void Ninio::removePrestadoA(Objeto *obj) {
-    if(!(this->PrestadoA.empty())) {
-        int i = 0;
-        while(i < this->PrestadoA.size()) {
-            if(obj == this->PrestadoA[i]) {
-                this->PrestadoA.at(i)->delPrestadoA();
-                this->PrestadoA.at(i) = this->PrestadoA[this->PrestadoA.size() - 1];
-                this->PrestadoA.pop_back();
-            } else {
-                i++;
-            }
-        }
-    }
-} */
 
 // Implementacion de los Constructores...
 Ninio::Ninio(string Nombre, int Edad, string Direccion, string Telefono): PrestadoA() {
@@ -53,18 +34,14 @@ Ninio::~Ninio() {
     }
 }
 
-// Implementacion de los Getters y Setters...
+// Implementacion de los Getters...
 string Ninio::getNombre() {return this->Nombre;}
-void Ninio::setNombre(string nombre) {this->Nombre = nombre;}
 
 int Ninio::getEdad() {return this->Edad;}
-void Ninio::setEdad(int edad) {this->Edad = edad;}
 
 string Ninio::getDireccion() {return this->Direccion;}
-void Ninio::setDireccion(string direccion) {this->Direccion = direccion;}
 
 string Ninio::getTelefono() {return this->Telefono;}
-void Ninio::setTelefono(string telefono) {this->Telefono = telefono;}
 
 // Implementacion de las demas operaciones...
 forward_list<string> Ninio::listarObjetosPrestados(){

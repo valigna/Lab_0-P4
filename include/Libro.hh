@@ -10,19 +10,17 @@ private:
     string Autor;
     int CantPaginas;
 public:
-    // Defino Constructores
+    // Defino Constructores...
     Libro(string Nombre, int AnioComprado, estado Estado, string autor, int CantPaginas);
     
-    // Defino el Destructor
+    // Defino el Destructor...
     ~Libro();
 
-    // Defino Getters y Setters
+    // Defino Getters...
     string getAutor();
-    void setAutor(string autor);
     int getCantPaginas();
-    void setCantPaginas(int CantPaginas);
 
-    // Otras Operaciones
+    // Otras Operaciones...
     string toString();
 };
 

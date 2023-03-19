@@ -19,23 +19,19 @@ public:
     void addPrestadoA(Objeto *obj);
     void removePrestadoA(Objeto *obj);
 
-    //Defino Constructores
+    //Defino Constructores...
     Ninio(string Nombre, int Edad, string Direccion, string Telefono);
 
-    //Defino el Destructor
+    //Defino el Destructor...
     ~Ninio();
 
-    //Defino Getters y Setters
-    void setNombre(string nombre);
-    void setEdad(int edad);
-    void setDireccion(string direccion);
-    void setTelefono(string telefono);
+    //Defino Getters...
     string getNombre();
     int getEdad();
     string getDireccion();
     string getTelefono();
 
-    // Otras operaciones
+    // Otras operaciones...
     forward_list<string> listarObjetosPrestados();
 };
 

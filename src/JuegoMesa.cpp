@@ -11,10 +11,7 @@ JuegoMesa::~JuegoMesa(){ }
 
 // Implementacion de los Getters y Setters
 int JuegoMesa::getEdadRecomendada(){return this->EdadRecomendada;}
-void JuegoMesa::setEdadRecomendada(int n){this->EdadRecomendada = n;}
-
 int JuegoMesa::getCantJugadores(){return this->CantJugadores;}
-void JuegoMesa::setCantJugadores(int h){this->CantJugadores = h;}
 
 
 // Implementacion de las demas operaciones...

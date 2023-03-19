@@ -19,12 +19,9 @@ public:
     // Defino el Destructor
     ~DTObjetoRoto();
 
-    // Defino Getters y Setters...
-    void setNombreObjeto(string nombre);
+    // Defino los Getters
     string getNombreObjeto();
-    void setPrestado(bool p);
     bool getPrestado();
-    void setNombreNinio(string nombre);
     string getNombreNinio();
 };
 

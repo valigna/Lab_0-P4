@@ -26,11 +26,7 @@ public:
 
     // Defino Getters y Setters
     string getNombre();
-    void setNombre(string nombre);
-    int getAnio();
-    void setAnio(int anio);
     estado getEstado();
-    void setEstado(estado Estado);
 
     // Otras operaciones
     virtual string toString();

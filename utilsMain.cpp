@@ -1,30 +1,14 @@
-#include "src/Objeto.cpp"
-#include "src/JuegoMesa.cpp"
-#include "src/Libro.cpp"
-#include "src/Ninio.cpp"
-#include "src/DTObjetoRoto.cpp"
+#include "include/Objeto.hh"
+#include "include/JuegoMesa.hh"
+#include "include/Libro.hh"
+#include "include/Ninio.hh"
+#include "include/DTObjetoRoto.hh"
 #include <iostream>
 
 void setLink(Objeto *obj, Ninio *ninio) {
     obj->setPrestadoA(ninio);
     ninio->addPrestadoA(obj);
 }
-
-/* Como se declara la sobrecarga del operador <<
-
-std::ostream &operator<<(std::ostream &os, myclass const &m) { 
-    return os << m.i;
-}
-
-o
-
-std::ostream& operator<<(std::ostream& os, const myclass& obj)
-{
-      os << obj.somevalue;
-      return os;
-}
-
-*/
 
 std::ostream& operator<<(std::ostream& os, const DTObjetoRoto& obj) {
     os << (const_cast<DTObjetoRoto&>(obj)).getNombreObjeto() << ", Prestado ";

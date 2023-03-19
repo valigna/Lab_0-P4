@@ -16,10 +16,8 @@ public:
     // Defino el Destructor
     ~JuegoMesa();
 
-    // Defino Getters y Setters
-    void setEdadRecomendada(int EdadRecomendada);
+    // Defino Getters
     int getEdadRecomendada();
-    void setCantJugadores(int cantJugadores);
     int getCantJugadores();
 
     // Otras Operaciones

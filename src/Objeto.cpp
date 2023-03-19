@@ -31,18 +31,11 @@ Objeto::~Objeto() {
 
 // Implementacion de los Getters y Setters...
 string Objeto::getNombre(){return Nombre;}
-void Objeto::setNombre(string nombre){this->Nombre = nombre;}
-
-int Objeto::getAnio(){return AnioComprado;}
-void Objeto::setAnio(int anio){this->AnioComprado = anio;}
 
 estado Objeto::getEstado(){return Estado;}
-void Objeto::setEstado(estado Estado){this->Estado = Estado;}
 
 // Implementacion de las demas operaciones...
 string Objeto::toString() {return "";}
-
-// Implementacion de las Operaciones Auxiliares...
 string Objeto::EstadoToString(){
     switch (this->Estado)
     {
