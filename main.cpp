@@ -48,7 +48,7 @@ int main() {
     for(auto& x: mapaNinios){
         forward_list<string> aux = (x.second)->listarObjetosPrestados();
         while ((!aux.empty())) {
-            cout << "Niño: " << (x.second)->getNombre() << "Objeto: " << aux.front() << endl;
+            cout << "Niño: " << (x.second)->getNombre() << " Objeto: " << aux.front() << endl;
             aux.pop_front();
         }
     }
@@ -67,30 +67,53 @@ int main() {
      cout << "-------------------------------" << endl;
     
     // Parte h)
-    Objeto* dummy = mapaObjetos["Uno"];
-    mapaObjetos.erase("Uno");
+    // Objeto* dummy = mapaObjetos["Uno"];
+    // mapaObjetos.erase("Uno");
+    // delete dummy;
     for(auto& x: mapaObjetos) {
+
+        cout << "Eliminando objeto: " << x.first << endl;
 
         Ninio *n = (x.second)->getPrestadoA();
         bool estabaRoto = ((x.second)->getEstado()) == Roto;
-
+        
         // Borramos el objeto...
+        //mapaObjetos.erase(x.first);
+        delete x.second;
 
         // Consultamos la nueva lista de objetos prestados del Ninio anteriormente linkeado con el objeto...
-        forward_list<string> lista = n->listarObjetosPrestados();
-        while ((!lista.empty())) {
-            cout << "Ninio: " << (n->getNombre()) << "Objeto : " << lista.front() << endl;
-            lista.pop_front();
+        cout << "-------------------------------" << endl;
+        cout << "Mostrando la nueva lista de objetos prestados del ninio al cual estaba linkeado..." << endl;
+        cout << "-------------------------------" << endl;
+        if(n != NULL) {    
+            forward_list<string> lista = n->listarObjetosPrestados();
+            while ((!lista.empty())) {
+                cout << "Prestado A:" << n->getNombre() << endl;
+                cout << "Ninio: " << (n->getNombre()) << "Objeto : " << lista.front() << endl;
+                lista.pop_front();
+            }
         }
+        cout << "-------------------------------" << endl;
+        n = NULL;
 
         // En caso de que fuera un objeto "Roto", consultamos nuevamente la lista de objetos rotos...
         if (estabaRoto) {
-            for(auto& x : mapaObjetosRotos) {
-                cout << &(x.second);
+            mapaObjetosRotos.erase(x.first);
+            cout << "-------------------------------" << endl;
+            cout << "Mostrando la lista actualizada de objetos rotos..." << endl;
+            cout << "-------------------------------" << endl;
+            for(auto& y : mapaObjetosRotos) {
+                cout << *(y.second) << endl;
             }
+            cout << "-------------------------------" << endl;
         }
 
     }
+
+    for(auto& x: mapaNinios) {
+
+    }
+    mapaObjetos.clear();
 
     return 1;
     

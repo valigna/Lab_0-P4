@@ -10,8 +10,10 @@ void Objeto::setPrestadoA(Ninio *ninio) {
 }
 
 void Objeto::delPrestadoA() {
-    this->PrestadoA->removePrestadoA(this);
-    this->PrestadoA = NULL;
+    if(this->PrestadoA != NULL) {
+        this->PrestadoA->removePrestadoA(this);
+        this->PrestadoA = NULL;
+    }
 }
 
 // Implementacion de los Constructores...

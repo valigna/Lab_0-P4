@@ -7,27 +7,28 @@ void Ninio::addPrestadoA(Objeto* obj) {
 
 void Ninio::removePrestadoA(Objeto *obj){
     int i = 0;
-    while(i < PrestadoA.size() && obj != PrestadoA[i]){
+    while( (i < PrestadoA.size()) && (obj != PrestadoA[i]) ){
         i++;
     }
     if(i < PrestadoA.size()){
         while(i < (PrestadoA.size() - 1)){
             PrestadoA.at(i) = PrestadoA.at(i + 1);
+            i++;
         }
-        PrestadoA[PrestadoA.size()] = NULL;
+        // PrestadoA[PrestadoA.size() - 1] = NULL;
         
-        PrestadoA.at(i) = PrestadoA.at(PrestadoA.size() - 1);
+        //PrestadoA.at(i) = PrestadoA.at(PrestadoA.size() - 1);
         PrestadoA.pop_back();
     }
 }
 
-/* Asumiendo que no importa el orden...
+/* // Asumiendo que no importa el orden...
 void Ninio::removePrestadoA(Objeto *obj) {
     if(!(this->PrestadoA.empty())) {
-        int i = );
-        while(i this->PrestadoA.size()ze) {
-            if(obj == this->PrestadoA[i])
-                this->PrestadoA.at(i)->delPrestadoA(this); {
+        int i = 0;
+        while(i < this->PrestadoA.size()) {
+            if(obj == this->PrestadoA[i]) {
+                this->PrestadoA.at(i)->delPrestadoA();
                 this->PrestadoA.at(i) = this->PrestadoA[this->PrestadoA.size() - 1];
                 this->PrestadoA.pop_back();
             } else {
@@ -35,7 +36,7 @@ void Ninio::removePrestadoA(Objeto *obj) {
             }
         }
     }
-*/;
+} */
 
 // Implementacion de los Constructores...
 Ninio::Ninio(string Nombre, int Edad, string Direccion, string Telefono): PrestadoA() {

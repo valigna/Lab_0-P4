@@ -28,8 +28,8 @@ std::ostream& operator<<(std::ostream& os, const myclass& obj)
 
 std::ostream& operator<<(std::ostream& os, const DTObjetoRoto& obj) {
     os << (const_cast<DTObjetoRoto&>(obj)).getNombreObjeto() << ", Prestado ";
-    if(obj.getPrestado()) {
-        os << "SI, " << obj->getNombreNinio();
+    if((const_cast<DTObjetoRoto&>(obj)).getPrestado()) {
+        os << "SI, " << (const_cast<DTObjetoRoto&>(obj)).getNombreNinio();
     }
     else {
         os << "NO";
